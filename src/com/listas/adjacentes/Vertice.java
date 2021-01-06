@@ -8,20 +8,14 @@ public class Vertice {
     private String nome;
     private List<Aresta> adjacencias;
     
-    private Vertice pi;
-    private String cor;
-
-    private Integer tInicial;
-    private Integer tFinal;
-	
+    private boolean marcado;
+    private int id;
 
     Vertice(String nome) {
         this.nome = nome;
         this.adjacencias = new ArrayList<Aresta>();
-        this.pi = null;
-        this.cor = "b";
-        this.tInicial = 0;
-        this.tFinal = 0;
+        this.marcado = false;
+        this.id = 0;
     }
 
     void addAdjacencia(Aresta e) {
@@ -44,35 +38,19 @@ public class Vertice {
 		this.adjacencias = adjacencias;
 	}
 
-	public Vertice getPi() {
-		return pi;
+	public boolean isMarcado() {
+		return marcado;
 	}
 
-	public void setPi(Vertice pi) {
-		this.pi = pi;
+	public void setMarcado(boolean marcado) {
+		this.marcado = marcado;
 	}
 
-	public String getCor() {
-		return cor;
+	public int getId() {
+		return id;
 	}
 
-	public void setCor(String cor) {
-		this.cor = cor;
-	}
-
-	public Integer gettInicial() {
-		return tInicial;
-	}
-
-	public void settInicial(Integer tInicial) {
-		this.tInicial = tInicial;
-	}
-
-	public Integer gettFinal() {
-		return tFinal;
-	}
-
-	public void settFinal(Integer tFinal) {
-		this.tFinal = tFinal;
+	public void setId(int id) {
+		this.id = id;
 	}
 }
